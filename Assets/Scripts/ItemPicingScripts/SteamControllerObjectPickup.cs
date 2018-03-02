@@ -135,8 +135,13 @@ public class SteamControllerObjectPickup : MonoBehaviour
      private IEnumerator ReSetPosRot()
     {
         _coroutineIsRuning = true;
-        Debug.Log("runing");
+        while (_coroutineIsRuning)
+        {
+            pickedObject.transform.rotation = Quaternion.identity;
+            yield return null;
+        }
+       
         yield return null;
-        _coroutineIsRuning = false;
+        
     }
 }
