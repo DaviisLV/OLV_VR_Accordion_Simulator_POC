@@ -137,7 +137,7 @@ public class SteamControllerObjectPickup : MonoBehaviour
         _coroutineIsRuning = true;
         while (_coroutineIsRuning)
         {
-            pickedObject.transform.rotation = new Quaternion(Accardion.x, Accardion.y, Accardion.z, Accardion.w);
+           // pickedObject.transform.rotation = new Quaternion(Accardion.x, Accardion.y, Accardion.z, Accardion.w);
             yield return null;
         }
        
