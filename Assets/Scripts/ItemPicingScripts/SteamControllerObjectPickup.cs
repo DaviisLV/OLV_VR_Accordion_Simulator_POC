@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class SteamControllerObjectPickup : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class SteamControllerObjectPickup : MonoBehaviour
     private GameObject pickedObject;
     private Rigidbody pickedObjectRigB;
     private bool isThrowing;
+    private bool _coroutineIsRuning = false;
     private SteamVR_Controller.Device Controller { get { return SteamVR_Controller.Input((int)_trackedObj.index); } }
 
     #region MonoBehaviour
@@ -103,6 +105,11 @@ public class SteamControllerObjectPickup : MonoBehaviour
             pickedObjectRigB.useGravity = false;
             pickedObjectRigB.freezeRotation = false;
             objectRigidbody = null;
+            if (!_coroutineIsRuning)
+            {
+                StartCoroutine(ReSetPosRot());
+            }
+
         }
         else
         {
@@ -123,5 +130,13 @@ public class SteamControllerObjectPickup : MonoBehaviour
             isThrowing = true;
 
         }
+    }
+
+     private IEnumerator ReSetPosRot()
+    {
+        _coroutineIsRuning = true;
+        Debug.Log("runing");
+        yield return null;
+        _coroutineIsRuning = false;
     }
 }
