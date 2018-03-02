@@ -107,7 +107,7 @@ public class SteamControllerObjectPickup : MonoBehaviour
             objectRigidbody = null;
             if (!_coroutineIsRuning)
             {
-                StartCoroutine(ReSetPosRot());
+                StartCoroutine(ReSetPosRot(pickedObject.transform.rotation));
             }
 
         }
@@ -132,12 +132,12 @@ public class SteamControllerObjectPickup : MonoBehaviour
         }
     }
 
-     private IEnumerator ReSetPosRot()
+     private IEnumerator ReSetPosRot(Quaternion Accardion)
     {
         _coroutineIsRuning = true;
         while (_coroutineIsRuning)
         {
-            pickedObject.transform.rotation = Quaternion.identity;
+            pickedObject.transform.rotation = new Quaternion(Accardion.x, Accardion.y, Accardion.z, Accardion.w);
             yield return null;
         }
        
