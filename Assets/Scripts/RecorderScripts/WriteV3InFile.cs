@@ -7,10 +7,12 @@ using System.IO;
 
 public class WriteV3InFile : MonoBehaviour {
 
+    [HideInInspector]
+    public string FolderPath;
     public AudioSource Audio;
     public Transform RightController;
     public Transform LeftController;
-
+    string paths;
     string _rightControlerFile;
     string _leftControllerFile;
     private bool _isRecording = false;
@@ -21,11 +23,17 @@ public class WriteV3InFile : MonoBehaviour {
     StreamWriter _leftSW;
     float _rightContStartPos;
     float _leftContStartPos;
+    public bool OverrideFile;
 
     public void Awake()
     {
         _rightControlerFile = Audio.name + "_" + RightController.name + ".txt";
         _leftControllerFile = Audio.name + "_" + LeftController.name + ".txt";
+    }
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            StartRecord();
     }
 
     public void StopRecord()
@@ -43,13 +51,18 @@ public class WriteV3InFile : MonoBehaviour {
     {
         if (_isStarted) return;
         _isRecording = true;
-        if (File.Exists(_rightControlerFile))
-            Debug.Log(_rightControlerFile + " already exists and will be owerrite.");
-        if (File.Exists(_leftControllerFile))
-            Debug.Log(_leftControllerFile + " already exists and will be owerrite.");
-     
-        FileStream _rightCFile = File.Open(_rightControlerFile, FileMode.Create);
-        FileStream _leftCFile = File.Open(_leftControllerFile, FileMode.Create);
+
+        if (File.Exists(FolderPath + "/" + _rightControlerFile) || File.Exists(FolderPath + "/" + _leftControllerFile))
+            if (!OverrideFile)
+            {
+                Debug.Log("File alreday exist");
+                return;
+            }
+            else
+                Debug.Log("File will be overwritten");
+
+        FileStream _rightCFile = File.Open(FolderPath+"/"+_rightControlerFile, FileMode.Create);
+        FileStream _leftCFile = File.Open(FolderPath + "/" + _leftControllerFile, FileMode.Create);
 
         _rightSW = new StreamWriter(_rightCFile);
         _leftSW = new StreamWriter(_leftCFile);
