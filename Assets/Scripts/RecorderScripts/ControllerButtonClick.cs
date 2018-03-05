@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ControllerButtonClick : MonoBehaviour {
+public class ControllerButtonClick : MonoBehaviour
+{
     public MoveForvard move;
     public WriteV3InFile file;
     public GameObject UI;
@@ -18,7 +19,7 @@ public class ControllerButtonClick : MonoBehaviour {
     private void Start()
     {
         _trackedObj = GetComponent<SteamVR_TrackedObject>();
-        
+
     }
 
     private void Update()
@@ -40,7 +41,7 @@ public class ControllerButtonClick : MonoBehaviour {
 
         if (Controller.GetPressDown(Triger))
         {
-           
+
             file.StopRecord();
             move.move = false;
             UI.SetActive(false);

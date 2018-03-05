@@ -22,7 +22,7 @@ public class ReadV3FromFile : MonoBehaviour
         for (int f = 0; f < allPoints.Length; f++)
         {
             Transform item = Instantiate(items) as Transform;
-            Vector3 position = allPoints[f];            
+            Vector3 position = allPoints[f];
             item.transform.parent = transform;
             item.transform.localPosition = position;
         }

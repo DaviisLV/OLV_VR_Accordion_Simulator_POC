@@ -78,7 +78,7 @@ public class SteamControllerObjectPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-    //    Debug.Log("OnTriggerEnter " + other.gameObject.name);
+        //    Debug.Log("OnTriggerEnter " + other.gameObject.name);
     }
 
     private void OnTriggerStay(Collider other)
@@ -107,7 +107,7 @@ public class SteamControllerObjectPickup : MonoBehaviour
             objectRigidbody = null;
             if (!_coroutineIsRuning)
             {
-                StartCoroutine(ReSetPosRot(pickedObject.transform.rotation));
+                //StartCoroutine(ReSetPosRot(pickedObject.transform.rotation));
             }
 
         }
@@ -120,7 +120,7 @@ public class SteamControllerObjectPickup : MonoBehaviour
     private void DropObj()
     {
         if (_fixedJoint.connectedBody != null)
-        {         
+        {
             objectRigidbody = _fixedJoint.connectedBody;
             pickedObjectRigB.rotation = Quaternion.identity;
             pickedObjectRigB.useGravity = true;
@@ -132,16 +132,16 @@ public class SteamControllerObjectPickup : MonoBehaviour
         }
     }
 
-     private IEnumerator ReSetPosRot(Quaternion Accardion)
-    {
-        _coroutineIsRuning = true;
-        while (_coroutineIsRuning)
-        {
-           // pickedObject.transform.rotation = new Quaternion(Accardion.x, Accardion.y, Accardion.z, Accardion.w);
-            yield return null;
-        }
+    //private IEnumerator ReSetPosRot(Quaternion Accardion)
+    //{
+    //    _coroutineIsRuning = true;
+    //    while (_coroutineIsRuning)
+    //    {
        
-        yield return null;
-        
-    }
+    //        yield return null;
+    //    }
+
+    //    yield return null;
+
+    //}
 }
