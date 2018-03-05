@@ -31,9 +31,7 @@ public class SteamControllerObjectPickup : MonoBehaviour
             Debug.Log("Controller not initialized");
             return;
         }
-
-        var device = SteamVR_Controller.Input((int)_trackedObj.index);
-
+        
         if (Controller.GetPressDown(TriggerButton))
         {
             PickUpObj();
