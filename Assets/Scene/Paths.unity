@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b168a6d1ee2084992b329760e7c35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FolderPath: C:/Users/davis.abols/Desktop
+  FolderPath: C:/
   Audio: {fileID: 1708565422}
   RightController: {fileID: 2009318881}
   LeftController: {fileID: 1870576916}

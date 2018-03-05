@@ -5,7 +5,8 @@ using System;
 using System.IO;
 
 
-public class WriteV3InFile : MonoBehaviour {
+public class WriteV3InFile : MonoBehaviour
+{
 
     [HideInInspector]
     public string FolderPath;
@@ -61,7 +62,7 @@ public class WriteV3InFile : MonoBehaviour {
             else
                 Debug.Log("File will be overwritten");
 
-        FileStream _rightCFile = File.Open(FolderPath+"/"+_rightControlerFile, FileMode.Create);
+        FileStream _rightCFile = File.Open(FolderPath + "/" + _rightControlerFile, FileMode.Create);
         FileStream _leftCFile = File.Open(FolderPath + "/" + _leftControllerFile, FileMode.Create);
 
         _rightSW = new StreamWriter(_rightCFile);
@@ -72,7 +73,6 @@ public class WriteV3InFile : MonoBehaviour {
         float diff = (_leftContStartPos - _rightContStartPos) / 2;
         _rightContStartPos += diff;
         _leftContStartPos -= diff;
-         
 
         StartCoroutine(Record(speed));
         Audio.Play();
@@ -89,7 +89,7 @@ public class WriteV3InFile : MonoBehaviour {
             _leftSW.WriteLine(GetV3PositionLeft());
             yield return new WaitForSeconds(speed);
         }
-  
+
     }
     string GetV3PositionRight()
     {
