@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour {
 
-    public GameObject line1;
-    //public GameObject line2;
+    public GameObject NoteLine;
 
     private const Valve.VR.EVRButtonId Menu = Valve.VR.EVRButtonId.k_EButton_ApplicationMenu;
     private const Valve.VR.EVRButtonId Grip = Valve.VR.EVRButtonId.k_EButton_Grip;
@@ -31,7 +30,7 @@ public class StartGame : MonoBehaviour {
         if (Controller.GetPressDown(Menu))
         {
            
-            line1.SetActive(true);
+            NoteLine.SetActive(true);
 
         }
 

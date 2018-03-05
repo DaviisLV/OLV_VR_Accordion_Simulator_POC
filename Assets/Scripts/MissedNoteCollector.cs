@@ -9,7 +9,6 @@ public class MissedNoteCollector : MonoBehaviour {
     {
         if (other.gameObject.tag == "BlueNotes" || other.gameObject.tag == "RedNotes")
         {
-          //  MissNote();
             Destroy(other.gameObject);
             caunt++;
         }
