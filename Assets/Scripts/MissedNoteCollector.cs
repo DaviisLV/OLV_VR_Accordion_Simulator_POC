@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MissedNoteCollector : MonoBehaviour {
     int caunt;
-    public AudioSource music;
 
     void OnTriggerEnter(Collider other)
     {
@@ -15,11 +14,6 @@ public class MissedNoteCollector : MonoBehaviour {
             caunt++;
         }
 
-    }
-    public void MissNote()
-    {
-        if (music.pitch >0)
-        music.pitch -= 0.01f;
     }
     public int GetMissedCount()
     {
