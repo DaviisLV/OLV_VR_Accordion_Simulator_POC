@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveForvard : MonoBehaviour {
+public class MoveForvard : MonoBehaviour
+{
     public bool move = false;
     private Vector3 _startPoz;
     private void Start()
@@ -10,7 +11,8 @@ public class MoveForvard : MonoBehaviour {
         _startPoz = this.transform.position;
     }
 
-    void Update () {
+    void Update()
+    {
         if (move == true)
             this.transform.position += Vector3.forward * Time.deltaTime * 2;
         else

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour {
+public class Controller : MonoBehaviour
+{
 
     public GameObject HeadCamera;
     public GameObject Accardion;
@@ -18,9 +19,10 @@ public class Controller : MonoBehaviour {
     }
 
 
-        // Update is called once per frame
-        void Update () {
-      Collider.transform.position = HeadCamera.transform.position;
-     
+    // Update is called once per frame
+    void Update()
+    {
+        Collider.transform.position = HeadCamera.transform.position;
+
     }
 }

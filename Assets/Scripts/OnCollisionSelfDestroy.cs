@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnCollisionSelfDestroy : MonoBehaviour {
+public class OnCollisionSelfDestroy : MonoBehaviour
+{
     int caunt;
     public AudioSource music;
     public GameObject collisionNote;
@@ -18,9 +19,9 @@ public class OnCollisionSelfDestroy : MonoBehaviour {
             if (caunt < 1)
             {
                 if (!music.isPlaying)
-                music.Play();
-            
-            }       
+                    music.Play();
+
+            }
 
             Destroy(other.gameObject, 1f);
 
@@ -28,7 +29,7 @@ public class OnCollisionSelfDestroy : MonoBehaviour {
         }
     }
 
-  public int GetHitCount()
+    public int GetHitCount()
     {
         return caunt;
     }

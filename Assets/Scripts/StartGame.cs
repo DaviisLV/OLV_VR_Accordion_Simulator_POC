@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGame : MonoBehaviour {
+public class StartGame : MonoBehaviour
+{
 
     public GameObject NoteLine;
 
@@ -29,7 +30,7 @@ public class StartGame : MonoBehaviour {
 
         if (Controller.GetPressDown(Menu))
         {
-           
+
             NoteLine.SetActive(true);
 
         }
@@ -47,4 +48,4 @@ public class StartGame : MonoBehaviour {
     }
 
 
-    }
+}

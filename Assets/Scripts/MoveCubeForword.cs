@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCubeForword : MonoBehaviour {
+public class MoveCubeForword : MonoBehaviour
+{
 
     public GameObject finish;
     public float speed = 1.0F;

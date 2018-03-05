@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ShowAllMiss : MonoBehaviour {
+public class ShowAllMiss : MonoBehaviour
+{
 
     public GameObject MissCollider;
     Text text;
