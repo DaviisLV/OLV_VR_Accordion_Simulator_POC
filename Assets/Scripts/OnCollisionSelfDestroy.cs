@@ -14,8 +14,6 @@ public class OnCollisionSelfDestroy : MonoBehaviour {
         if (other.gameObject.tag == collisionNote.tag)
         {
             sGame.Vibration();
-            particle = other.gameObject.GetComponentInChildren<ParticleSystem>();
-            particle.Play();
 
             Destroy(other.gameObject.GetComponent<BoxCollider>());
             if (caunt < 1)
@@ -23,9 +21,7 @@ public class OnCollisionSelfDestroy : MonoBehaviour {
                 if (!music.isPlaying)
                 music.Play();
             
-            }
-         
-           // HitNote();
+            }       
 
             Destroy(other.gameObject, 1f);
 
@@ -36,18 +32,5 @@ public class OnCollisionSelfDestroy : MonoBehaviour {
   public int GetHitCount()
     {
         return caunt;
-    }
-
-    public void MissNote()
-    {
-        music.pitch-=0.2f;
-    }
-    public void HitNote()
-    {
-        if (music.pitch == 1) return;
-        if (music.pitch < 1)
-            music.pitch += 0.005f;
-        if (music.pitch > 1)
-            music.pitch = 1;
     }
 }
