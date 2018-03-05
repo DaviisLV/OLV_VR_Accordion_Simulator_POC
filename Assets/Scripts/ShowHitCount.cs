@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GetArmPosition : MonoBehaviour
+public class ShowHitCount : MonoBehaviour
 {
 
     public GameObject Arm;
@@ -17,7 +17,7 @@ public class GetArmPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnCollisionSelfDestroy GC = Arm.GetComponent<OnCollisionSelfDestroy>();
+        HitNoteDestroy GC = Arm.GetComponent<HitNoteDestroy>();
 
         text.text = GC.GetHitCount().ToString();
 

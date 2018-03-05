@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurveMovment : MonoBehaviour
+public class NoteMovment : MonoBehaviour
 {
 
     public GameObject CurveObject;

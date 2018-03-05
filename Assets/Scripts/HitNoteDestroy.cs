@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnCollisionSelfDestroy : MonoBehaviour
+public class HitNoteDestroy : MonoBehaviour
 {
     int caunt;
     public AudioSource music;
