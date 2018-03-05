@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OnCollisionSelfDestroy : MonoBehaviour {
     int caunt;
+    public AudioSource music;
     public GameObject collisionNote;
     public StartGame sGame;
 
